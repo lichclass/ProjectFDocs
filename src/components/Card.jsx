@@ -2,20 +2,23 @@ import PropTypes from 'prop-types';
 
 function Card(props) {
   return (
-    <div className="flex border rounded w-72 max-h-max p-4
-                    shadow-lg hover:border-blue-700 hover:shadow-xl
-                    transform hover:scale-105 transition-transform duration-300
-                    cursor-pointer">
-      <a href={props.link} target="_blank" rel="noopener noreferrer">
-        <div className="flex items-center justify-center p-4">
-          <img src={props.image} className="mx-auto" />
+    <div className='col-lg mb-3 '>
+      <div className='card'>
+        <div className='row no-gutters'>
+          <div className='col-md-4'>
+            <img src={props.image} className='card-img p-4' alt='...' />
+          </div>
+          <div className='col-md-8 d-flex align-self-center'>
+            <div className='card-body'>
+              <h5 className='card-title font-bold text-xl'>{props.title}</h5>
+              <p className='card-text'>{props.description}</p>
+              <br />
+              <a href={props.link} className='btn btn-primary hover:scale-110'>Go to Document</a>
+              {props.isNew && <span className='text-red-600 badge badge-pill badge-danger ml-2'>New!</span>}
+            </div>
+          </div>
         </div>
-        <div className='text-center p-5'>
-          <span className="text-2xl font-bold">{props.title}</span>
-          <br /><br /><hr />
-          <span>{props.description}</span>
-        </div>
-      </a>
+      </div>
     </div>
   );
 }
@@ -25,6 +28,7 @@ Card.propTypes = {
     image: PropTypes.string,
     title: PropTypes.string,
     description: PropTypes.string,
+    isNew: PropTypes.bool,
 }
 
 Card.defaultProps = {
@@ -32,6 +36,7 @@ Card.defaultProps = {
     image: "https://via.placeholder.com/150",
     title: "Card Title",
     description: "Card Description",
+    isNew: false,
 }
 
 export default Card;
