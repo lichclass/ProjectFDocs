@@ -2,19 +2,20 @@ import PropTypes from 'prop-types';
 
 function Card(props) {
   return (
-    <div className='col-lg mb-3 '>
-      <div className='card'>
-        <div className='row no-gutters'>
-          <div className='col-md-4'>
-            <img src={props.image} className='card-img p-4' alt='...' />
+    <div className='col-sm-4 flex'>
+      <div className="card mb-3">
+        <div className="row g-0">
+          <div className="col-md-4 flex items-center justify-center p-4">
+            <img src={props.image} className="img-fluid rounded-start" />
           </div>
-          <div className='col-md-8 d-flex align-self-center'>
-            <div className='card-body'>
-              <h5 className='card-title font-bold text-xl'>{props.title}</h5>
-              <p className='card-text'>{props.description}</p>
-              <br />
-              <a href={props.link} className='btn btn-primary hover:scale-110'>Go to Document</a>
-              {props.isNew && <span className='text-red-600 badge badge-pill badge-danger ml-2'>New!</span>}
+          <div className="col-md-8">
+            <div className="card-body">
+              <h5 className="card-title text-lg font-bold">{props.title}</h5>
+              <p className="card-text">{props.description}</p>
+            </div>
+            <div className='px-3 pb-3'>
+              <a href={props.link} className="btn btn-primary">View Document</a>
+              {props.isNew && <span className="badge bg-success ms-2">New</span>}
             </div>
           </div>
         </div>
