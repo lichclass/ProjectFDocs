@@ -34,6 +34,10 @@ function App() {
                 image={lucidChartImage}
                 title="BudgetWise Charts"
                 description="Contains the website navigation sequence/flow visualization. Contains the Data Model of the Application." />
+          <Card link="https://docs.google.com/document/d/1CPRiZR5Z8LfA_Vo6PlnnDbkO0DknSK7umS62zthsI1k/edit?usp=sharing"
+                image={googleDocsImage}
+                title="Notification Alerts"
+                description="Contains a table for all the possible messages or advisory in the application using Machine Learning" />
           </div>
         </div>
       </div>
